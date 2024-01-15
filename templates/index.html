@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastreo de Envíos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Rastreo de Envíos</h1>
-    <form action="/rastreo" method="post">
-        <label for="codigo_seguimiento">Código de Seguimiento:</label>
-        <input type="text" name="codigo_seguimiento" required>
-        <button type="submit">Buscar</button>
-    </form>
+    <div class="container">
+        <h1>Rastreo de Envíos</h1>
+        <form action="/rastreo" method="post">
+            <label for="codigo_seguimiento">Código de Seguimiento:</label>
+            <input type="text" name="codigo_seguimiento" required>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
 </body>
 </html>
