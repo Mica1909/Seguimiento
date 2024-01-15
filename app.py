@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 # Base de datos simulada para el rastreo de envíos
 envios_db = {
-    '123456x': 'En tránsito',
+    '123456': 'En tránsito',
     '789012': 'Entregado',
-    '345678': 'En proceso de entregax',
+    '345678': 'En proceso de entrega',
 }
 
 @app.route('/')
@@ -30,4 +30,5 @@ def devolver():
     return redirect(url_for('rastreo', codigo_seguimiento=codigo_seguimiento))
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=5000, debug=True)

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado de Rastreo</title>
+    <title>Resultado de Rastreo - mixmatch</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -11,6 +11,19 @@
         <h1>Resultado de Rastreo</h1>
         <p>Código de Seguimiento: {{ codigo }}</p>
         <p>Estado: {{ estado }}</p>
+
+        {% if estado == 'Entregado' %}
+            <p style="color: green;">¡El paquete ha sido entregado con éxito!</p>
+        {% elif estado == 'En tránsito' %}
+            <p style="color: orange;">El paquete está en tránsito. Pronto será entregado.</p>
+        {% elif estado == 'En proceso de entrega' %}
+            <p style="color: blue;">El paquete está en proceso de entrega.</p>
+        {% elif estado == 'Devuelto' %}
+            <p style="color: red;">¡El paquete ha sido devuelto!</p>
+        {% else %}
+            <p style="color: gray;">Estado desconocido o no encontrado.</p>
+        {% endif %}
+
         <a href="/">Volver</a>
         
         <!-- Nuevo botón de Devolver -->
