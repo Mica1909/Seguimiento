@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('background.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 10px;
+}
