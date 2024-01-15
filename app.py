@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 # Base de datos simulada para el rastreo de envíos
 envios_db = {
-    '123456': 'En tránsito',
+    '123456x': 'En tránsito',
     '789012': 'Entregado',
-    '345678': 'En proceso de entrega',
+    '345678': 'En proceso de entregax',
 }
 
 @app.route('/')
