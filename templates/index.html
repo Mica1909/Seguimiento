@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rastreo de Envíos</title>
+    <title>Rastreo de Envíos - mixmatch</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Agrega un icono. Puedes reemplazar 'favicon.ico' con la ruta a tu propio icono. -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <h1>Rastreo de Envíos</h1>
+        <h1>Rastreo de Envíos - mixmatch</h1>
         <form action="/rastreo" method="post">
             <label for="codigo_seguimiento">Código de Seguimiento:</label>
             <input type="text" name="codigo_seguimiento" required>
@@ -17,3 +19,4 @@
     </div>
 </body>
 </html>
+
