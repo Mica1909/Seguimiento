@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,21 +13,21 @@
         <p>Estado: {{ estado }}</p>
 
         {% if estado == 'Entregado' %}
-            <p style="color: green;">¡El paquete ha sido entregado con éxito!</p>
+            <p class="success-message">¡El paquete ha sido entregado con éxito!</p>
         {% elif estado == 'En tránsito' %}
-            <p style="color: orange;">El paquete está en tránsito. Pronto será entregado.</p>
+            <p class="warning-message">El paquete está en tránsito. Pronto será entregado.</p>
         {% elif estado == 'En proceso de entrega' %}
-            <p style="color: blue;">El paquete está en proceso de entrega.</p>
+            <p class="info-message">El paquete está en proceso de entrega.</p>
         {% elif estado == 'Devuelto' %}
-            <p style="color: red;">¡El paquete ha sido devuelto!</p>
+            <p class="error-message">¡El paquete ha sido devuelto!</p>
         {% else %}
-            <p style="color: gray;">Estado desconocido o no encontrado.</p>
+            <p class="unknown-message">Estado desconocido o no encontrado.</p>
         {% endif %}
 
         <a href="/">Volver</a>
         
-        <!-- Nuevo botón de Devolver -->
-        <form action="/devolver" method="post">
+        <!-- Nuevo botón de Devolver con confirmación -->
+        <form action="/devolver" method="post" onsubmit="return confirm('¿Estás seguro de que deseas devolver este paquete?');">
             <input type="hidden" name="codigo_seguimiento" value="{{ codigo }}">
             <button type="submit">Devolver</button>
         </form>
