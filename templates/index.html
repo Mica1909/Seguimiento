@@ -1,27 +1,16 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rastreo de Envíos - mixmatch</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- Puedes reemplazar 'favicon.ico' con la ruta a tu propio icono -->
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>Shipment Tracking</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Rastreo de Envíos - mixmatch</h1>
-        <form action="/rastreo" method="post">
-            <label for="codigo_seguimiento">Código de Seguimiento</label>
-            <input type="text" name="codigo_seguimiento" required>
-            <button type="submit">Buscar</button>
-        </form>
-
-        {% if estado %}
-            <p>Estado del envío: {{ estado }}</p>
-        {% endif %}
-    </div>
+    <h1>Welcome to Shipment Tracking</h1>
+    <!-- Your content here -->
 </body>
 </html>
+
 
 

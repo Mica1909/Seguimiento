@@ -1,36 +1,16 @@
+<!-- templates/rastreo.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado de Rastreo - mixmatch</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Shipment Tracking - Result</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Resultado de Rastreo</h1>
-        <p>Código de Seguimiento: {{ codigo }}</p>
-        <p>Estado: {{ estado }}</p>
-
-        {% if estado == 'Entregado' %}
-            <p class="success-message">¡El paquete ha sido entregado con éxito!</p>
-        {% elif estado == 'En tránsito' %}
-            <p class="warning-message">El paquete está en tránsito. Pronto será entregado.</p>
-        {% elif estado == 'En proceso de entrega' %}
-            <p class="info-message">El paquete está en proceso de entrega.</p>
-        {% elif estado == 'Devuelto' %}
-            <p class="error-message">¡El paquete ha sido devuelto!</p>
-        {% else %}
-            <p class="unknown-message">Estado desconocido o no encontrado.</p>
-        {% endif %}
-
-        <a href="/">Volver</a>
-        
-        <!-- Nuevo botón de Devolver con confirmación -->
-        <form action="/devolver" method="post" onsubmit="return confirm('¿Estás seguro de que deseas devolver este paquete?');">
-            <input type="hidden" name="codigo_seguimiento" value="{{ codigo }}">
-            <button type="submit">Devolver</button>
-        </form>
-    </div>
+    <h1>Shipment Tracking Result</h1>
+    <p>Shipment Code: {{ codigo }}</p>
+    <p>Shipment Status: {{ estado }}</p>
+    <!-- Your content here -->
 </body>
 </html>
+
