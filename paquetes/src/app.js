@@ -24,11 +24,21 @@ function submitPackage() {
       .then(response => response.json())
       .then(data => {
         console.log('Paquete enviado exitosamente:', data);
-        // Puedes realizar acciones adicionales después de enviar el paquete
+  
+        // Mostrar los detalles del paquete después de enviarlo
+        document.getElementById('trackingNumberDisplay').textContent += data.trackingNumber;
+        document.getElementById('contentDisplay').textContent += data.content;
+        document.getElementById('weightDisplay').textContent += data.weight;
+        document.getElementById('originDisplay').textContent += data.origin;
+        document.getElementById('destinationDisplay').textContent += data.destination;
+  
+        // Mostrar el div de detalles del paquete
+        document.getElementById('packageDetails').style.display = 'block';
       })
       .catch(error => {
         console.error('Error al enviar el paquete:', error);
       });
   }
+  
   
   
