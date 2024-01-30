@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Agrega esta línea
+const cors = require('cors');
+const path = require('path'); // Agrega esta línea para trabajar con rutas de archivos
 
 const packageRoutes = require('./src/routes/packageRoutes');
 const driverRoutes = require('./src/routes/driverRoutes');
@@ -20,10 +21,8 @@ mongoose.connect('mongodb://localhost:27017/logisticaDB', { useNewUrlParser: tru
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Ruta de prueba "Hola Mundo"
-app.get('/', (req, res) => {
-  res.send('Hola Mundo');
-});
+// Rutas estáticas para servir archivos desde la carpeta 'public'
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.use('/packages', packageRoutes);
@@ -36,8 +35,11 @@ app.use((err, req, res, next) => {
   res.status(500).send('Error interno del servidor');
 });
 
+// Cualquier otra ruta no manejada por las anteriores, sirve el archivo 'index.html'
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
-
-
