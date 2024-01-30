@@ -1,9 +1,8 @@
-// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const packageRoutes = require('./src/routes/packageRoutes');  // Corrige la ruta aquí
+const packageRoutes = require('./src/routes/packageRoutes');
 const driverRoutes = require('./src/routes/driverRoutes');
 const assignmentRoutes = require('./src/routes/assignmentRoutes');
 
@@ -22,8 +21,15 @@ app.use('/packages', packageRoutes);
 app.use('/drivers', driverRoutes);
 app.use('/assignments', assignmentRoutes);
 
+// Manejo de errores
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Error interno del servidor');
+});
+
 // Iniciar servidor
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
+
 
