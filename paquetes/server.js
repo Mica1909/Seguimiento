@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 
 // Conexión a MongoDB sin la opción 'debug'
-mongoose.connect('mongodb://34.171.178.16:27017/logisticaDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/logisticaDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Configuración de bodyParser
 app.use(bodyParser.json());
