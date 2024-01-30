@@ -1,26 +1,27 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Logística App</title>
+  <title>Paquetes App</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Logística App</h1>
-  
-  <div id="packages">
-    <!-- Lista de paquetes se mostrará aquí -->
+
+  <div id="app">
+    <form id="packageForm">
+      <label for="packageName">Nombre del Paquete:</label>
+      <input type="text" id="packageName" name="packageName" required>
+      
+      <label for="packageWeight">Peso del Paquete:</label>
+      <input type="number" id="packageWeight" name="packageWeight" required>
+      
+      <button type="button" onclick="submitPackage()">Enviar Paquete</button>
+    </form>
   </div>
 
-  <div id="drivers">
-    <!-- Lista de choferes se mostrará aquí -->
-  </div>
-
-  <div id="assignments">
-    <!-- Lista de asignaciones se mostrará aquí -->
-  </div>
-
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
+
