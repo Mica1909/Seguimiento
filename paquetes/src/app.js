@@ -1,28 +1,34 @@
 // app.js
-document.addEventListener('DOMContentLoaded', () => {
-    function submitPackage() {
-      const packageName = document.getElementById('packageName').value;
-      const packageWeight = document.getElementById('packageWeight').value;
+function submitPackage() {
+    const trackingNumber = document.getElementById('trackingNumber').value;
+    const content = document.getElementById('content').value;
+    const weight = document.getElementById('weight').value;
+    const origin = document.getElementById('origin').value;
+    const destination = document.getElementById('destination').value;
   
-      const data = {
-        name: packageName,
-        weight: packageWeight,
-      };
+    const packageData = {
+      trackingNumber: trackingNumber,
+      content: content,
+      weight: weight,
+      origin: origin,
+      destination: destination,
+    };
   
-      // Realiza una solicitud POST al servidor
-      fetch('http://localhost:3000/packages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+    fetch('http://localhost:3000/packages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(packageData),
+    })
       .then(response => response.json())
-      .then(result => {
-        console.log('Resultado del servidor:', result);
-        // Puedes realizar acciones adicionales después de recibir la respuesta del servidor
+      .then(data => {
+        console.log('Paquete enviado exitosamente:', data);
+        // Puedes realizar acciones adicionales después de enviar el paquete
       })
-      .catch(error => console.error('Error:', error));
-    }
-  });
+      .catch(error => {
+        console.error('Error al enviar el paquete:', error);
+      });
+  }
+  
   
