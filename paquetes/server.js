@@ -6,7 +6,7 @@ const cors = require('cors');
 const path = require('path');
 
 // Importa tu modelo de paquete (Package)
-const Package = require('./models/Package');
+const Package = require('./src/models/Package');
 const packageRoutes = require('./src/routes/packageRoutes');
 const driverRoutes = require('./src/routes/driverRoutes');
 const assignmentRoutes = require('./src/routes/assignmentRoutes');
