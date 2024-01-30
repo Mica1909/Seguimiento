@@ -1,9 +1,11 @@
+// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const packageRoutes = require('./routes/packageRoutes');
-const driverRoutes = require('./routes/driverRoutes');
-const assignmentRoutes = require('./routes/assignmentRoutes');
+
+const packageRoutes = require('./src/routes/packageRoutes');  // Corrige la ruta aquí
+const driverRoutes = require('./src/routes/driverRoutes');
+const assignmentRoutes = require('./src/routes/assignmentRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,3 +26,4 @@ app.use('/assignments', assignmentRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
+
