@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const packageRoutes = require('./src/routes/packageRoutes');
 const driverRoutes = require('./src/routes/driverRoutes');
 const assignmentRoutes = require('./src/routes/assignmentRoutes');
-
+const cors = require('cors'); // Agrega esta línea
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -16,7 +16,10 @@ mongoose.connect('mongodb://localhost:27017/logisticaDB', { useNewUrlParser: tru
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 app.use(express.static('frontend'));
+// Habilita CORS
+app.use(cors());
 
 
 // Ruta de prueba "Hola Mundo"
@@ -38,6 +41,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
+
 
 
 
