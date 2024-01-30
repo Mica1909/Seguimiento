@@ -16,6 +16,8 @@ mongoose.connect('mongodb://localhost:27017/logisticaDB', { useNewUrlParser: tru
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('frontend'));
+
 
 // Ruta de prueba "Hola Mundo"
 app.get('/', (req, res) => {

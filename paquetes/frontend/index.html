@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logística App</title>
+</head>
+<body>
+  <h1>Logística App</h1>
+
+  <div id="packages-list">
+    <!-- Aquí se mostrarán los datos cargados desde el backend -->
+  </div>
+
+  <script>
+    // Puedes usar fetch o axios para realizar solicitudes HTTP desde el navegador
+    // Aquí un ejemplo básico usando fetch
+    fetch('http://localhost:3000/packages')
+      .then(response => response.json())
+      .then(data => {
+        // Maneja los datos recibidos y muéstralos en el frontend
+        const packagesList = document.getElementById('packages-list');
+        data.forEach(package => {
+          const packageItem = document.createElement('div');
+          packageItem.textContent = `ID: ${package._id}, Nombre: ${package.name}, Peso: ${package.weight} kg`;
+          packagesList.appendChild(packageItem);
+        });
+      })
+      .catch(error => console.error('Error al obtener datos desde el backend:', error));
+  </script>
+</body>
+</html>
