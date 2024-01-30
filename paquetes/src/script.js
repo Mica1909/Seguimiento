@@ -44,4 +44,3 @@ function submitPackage() {
         console.error('Error sending the package:', error);
       });
   }
-  

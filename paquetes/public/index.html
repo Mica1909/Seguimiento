@@ -9,35 +9,24 @@
 <body>
   <div id="app">
     <form id="packageForm">
-      <div class="form-group">
-        <label for="trackingNumber">Tracking Number:</label>
-        <input type="text" id="trackingNumber" name="trackingNumber" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Package Content:</label>
-        <input type="text" id="content" name="content" required>
-      </div>
-
-      <div class="form-group">
-        <label for="weight">Package Weight:</label>
-        <input type="number" id="weight" name="weight" required>
-      </div>
-
-      <div class="form-group">
-        <label for="origin">Package Origin:</label>
-        <input type="text" id="origin" name="origin" required>
-      </div>
-
-      <div class="form-group">
-        <label for="destination">Package Destination:</label>
-        <input type="text" id="destination" name="destination" required>
-      </div>
+      <!-- ... (tu formulario actual) ... -->
 
       <button type="button" onclick="submitPackage()">Submit Package</button>
     </form>
+
+    <!-- Agrega un elemento para mostrar los detalles del paquete después del envío -->
+    <div id="packageDetails" style="display:none;">
+      <h2>Package Details</h2>
+      <p><strong>Tracking Number:</strong> <span id="trackingNumberDisplay"></span></p>
+      <p><strong>Content:</strong> <span id="contentDisplay"></span></p>
+      <p><strong>Weight:</strong> <span id="weightDisplay"></span> kg</p>
+      <p><strong>Origin:</strong> <span id="originDisplay"></span></p>
+      <p><strong>Destination:</strong> <span id="destinationDisplay"></span></p>
+    </div>
   </div>
-  <!-- Include your script.js here -->
-  <script src="app.js"></script>
+
+  <!-- Agrega tu script.js aquí -->
+  <script src="script.js"></script>
 </body>
 </html>
+
