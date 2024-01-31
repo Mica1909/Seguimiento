@@ -1,4 +1,4 @@
-// script.js
+// script.js goitia
 
 // Esta función se llama cuando se hace clic en el botón "Submit Package" en el formulario
 function submitPackage() {
